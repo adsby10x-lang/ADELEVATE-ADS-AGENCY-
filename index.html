@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
 *{
 margin:0;
 padding:0;
@@ -23,15 +22,15 @@ justify-content:center;
 align-items:center;
 padding:20px;
 background:
-radial-gradient(circle at top left,#1d4ed820 0%,transparent 40%),
-radial-gradient(circle at bottom right,#7c3aed20 0%,transparent 40%),
-#06070b;
+radial-gradient(circle at top left,#2563eb20 0%,transparent 35%),
+radial-gradient(circle at bottom right,#7c3aed20 0%,transparent 35%),
+#07090d;
 overflow:hidden;
 }
 
 .card{
-width:min(92vw,400px);
-aspect-ratio:3/4;
+width:100%;
+max-width:400px;
 position:relative;
 }
 
@@ -42,9 +41,9 @@ inset:-2px;
 border-radius:30px;
 background:linear-gradient(
 135deg,
-rgba(59,130,246,.55),
-rgba(124,58,237,.45),
-rgba(6,182,212,.45)
+rgba(37,99,235,.5),
+rgba(124,58,237,.4),
+rgba(6,182,212,.4)
 );
 filter:blur(14px);
 opacity:.8;
@@ -52,15 +51,12 @@ opacity:.8;
 
 .content{
 position:relative;
-height:100%;
 background:#0d1117;
 border:1px solid rgba(255,255,255,.08);
 border-radius:30px;
 padding:22px;
-display:flex;
-flex-direction:column;
-justify-content:space-between;
 text-align:center;
+overflow:hidden;
 }
 
 .badge{
@@ -74,14 +70,13 @@ font-weight:600;
 color:#d1d5db;
 background:#151a23;
 border:1px solid rgba(255,255,255,.08);
-margin:auto;
 }
 
 .logo-wrap{
 position:relative;
 width:100px;
 height:100px;
-margin:18px auto 0;
+margin:18px auto;
 }
 
 .logo-glow{
@@ -95,72 +90,93 @@ background:linear-gradient(
 #06b6d4
 );
 filter:blur(18px);
-opacity:.75;
+opacity:.8;
 }
 
 .logo{
 position:relative;
 width:100px;
 height:100px;
-object-fit:cover;
 border-radius:50%;
+object-fit:cover;
 border:4px solid rgba(255,255,255,.08);
 }
 
 .agency-title{
-margin-top:16px;
 font-size:22px;
 font-weight:800;
-color:#fff;
 letter-spacing:.4px;
+color:#fff;
+margin-bottom:8px;
 }
 
 .tagline{
-margin-top:10px;
 font-size:14px;
-font-weight:600;
 font-style:italic;
+font-weight:600;
 color:#9ca3af;
-letter-spacing:.2px;
+margin-bottom:18px;
 }
 
 .services{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:10px;
-margin-top:22px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:8px;
+margin-bottom:20px;
 }
 
 .service{
 background:#131a24;
 border:1px solid rgba(255,255,255,.06);
-border-radius:16px;
-padding:12px 8px;
-}
-
-.service .icon{
-font-size:20px;
-margin-bottom:5px;
-}
-
-.service p{
+border-radius:999px;
+padding:10px 14px;
 font-size:11px;
 font-weight:600;
-line-height:1.4;
 color:white;
+white-space:nowrap;
 }
 
 .join-btn{
+position:relative;
 display:block;
-margin-top:18px;
 text-decoration:none;
 }
 
+.join-btn::before{
+content:"";
+position:absolute;
+left:-10px;
+top:50%;
+transform:translateY(-50%);
+width:42px;
+height:42px;
+background:#2563eb;
+border-radius:50%;
+filter:blur(18px);
+opacity:.7;
+}
+
+.join-btn::after{
+content:"";
+position:absolute;
+right:-10px;
+top:50%;
+transform:translateY(-50%);
+width:42px;
+height:42px;
+background:#7c3aed;
+border-radius:50%;
+filter:blur(18px);
+opacity:.7;
+}
+
 .join-btn button{
+position:relative;
 width:100%;
+padding:16px;
 border:none;
 cursor:pointer;
-padding:16px;
 border-radius:18px;
 font-size:15px;
 font-weight:800;
@@ -179,12 +195,16 @@ transform:translateY(-2px);
 }
 
 .footer{
-margin-top:12px;
+margin-top:14px;
 font-size:11px;
 color:#6b7280;
 }
 
-@media(max-width:400px){
+@media(max-width:420px){
+
+.content{
+padding:20px;
+}
 
 .agency-title{
 font-size:20px;
@@ -194,12 +214,12 @@ font-size:20px;
 font-size:13px;
 }
 
-.service p{
+.service{
 font-size:10px;
+padding:9px 12px;
 }
 
 }
-
 </style>
 </head>
 <body>
@@ -207,8 +227,6 @@ font-size:10px;
 <div class="card">
 
 <div class="content">
-
-<div>
 
 <div class="badge">
 Premium Telegram Marketing Agency
@@ -227,42 +245,17 @@ class="logo">
 ADELEVATE ADS AGENCY
 </h1>
 
-<p class="tagline">
+<div class="tagline">
 We Run Ads For Professionals
-</p>
+</div>
 
 <div class="services">
-
-<div class="service">
-<div class="icon">🏏</div>
-<p>Cricket Betting<br>/ Fantasy</p>
+<div class="service">🏏 Cricket Betting</div>
+<div class="service">📈 Stock Market</div>
+<div class="service">💹 Binary & Forex</div>
+<div class="service">🎨 Colour Trading</div>
+<div class="service">🚀 Other Businesses</div>
 </div>
-
-<div class="service">
-<div class="icon">📈</div>
-<p>Stock Market</p>
-</div>
-
-<div class="service">
-<div class="icon">💹</div>
-<p>Binary & Forex<br>Trading</p>
-</div>
-
-<div class="service">
-<div class="icon">🎨</div>
-<p>Colour Trading</p>
-</div>
-
-<div class="service" style="grid-column:1/3;">
-<div class="icon">🚀</div>
-<p>Other Businesses</p>
-</div>
-
-</div>
-
-</div>
-
-<div>
 
 <a
 href="https://t.me/+U_dceVTrTsFjYTU1"
@@ -277,8 +270,6 @@ class="join-btn">
 
 <div class="footer">
 Trusted Promotion • Fast Growth • Premium Reach
-</div>
-
 </div>
 
 </div>
